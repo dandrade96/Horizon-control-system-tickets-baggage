@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('iata_code');
-            $table->unsignedBigInteger('city_id');
+            $table->string('city');
+            $table->string('abbreviation');
             $table->timestamps();
         });
     }
