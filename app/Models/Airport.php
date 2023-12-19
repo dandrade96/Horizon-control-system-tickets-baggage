@@ -12,10 +12,7 @@ class Airport extends Model
     protected $fillable = [
         'name',
         'iata_code',
-        'city_id'
+        'city',
+        'abbreviation'
     ];
-
-    public function city(){
-        return $this->hasOne(City::class);
-    }
 }
