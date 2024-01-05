@@ -13,9 +13,4 @@ class Airline extends Model
         'name',
         'icao'
     ];
-
-    public function classes()
-    {
-        return $this->hasMany(FlightClass::class);
-    }
 }

@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Flight extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'origin_airport_id',
@@ -18,14 +19,15 @@ class Flight extends Model
     ];
 
     public function origin(){
-        return $this->hasOne(Airport::class);
+        return $this->belongsTo(Airport::class, 'origin_airport_id', 'id');
     }
 
     public function destination(){
-        return $this->hasOne(Airport::class);
+        return $this->belongsTo(Airport::class, 'destination_airport_id', 'id');
     }
 
     public function airplane(){
-        return $this->hasOne(Airplane::class);
+        return $this->belongsTo(Airplane::class, 'airplane_id', 'id');
     }
+
 }

@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('flight_class_id');
+            $table->unsignedBigInteger('flight_id');
             $table->string('passenger_name');
             $table->string('passenger_cpf');
             $table->string('passenger_birthday');
             $table->string('total_price');
+            $table->string('number');
             $table->unsignedBigInteger('purchase_id');
             $table->timestamps();
         });

@@ -12,9 +12,9 @@ trait HttpResponses {
         ],$status);
     }
 
-    public function error($message, $status = 404){
+    public function error($message, $status = 404, $success = false){
         return response()->json([
-            'success' => false,
+            'success' => $success,
             'message' => $message
         ], $status);
     }

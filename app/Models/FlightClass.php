@@ -13,13 +13,12 @@ class FlightClass extends Model
 
     protected $fillable = [
         'name',
-        'seat_quantify',
+        'seat_quantity',
         'seat_price',
         'airplane_id'
     ];
 
-    public function airplane()
-    {
-        return $this->belongsTo(Airplane::class);
+    public function airplane(){
+        return $this->belongsTo(Airplane::class, 'airplane_id', 'id');
     }
 }

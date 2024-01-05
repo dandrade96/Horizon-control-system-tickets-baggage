@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('flight_classes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('seat_quantify');
+            $table->string('seat_quantity');
             $table->string('seat_price');
             $table->unsignedBigInteger('airplane_id');
             $table->timestamps();

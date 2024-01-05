@@ -9,7 +9,8 @@ class AirportController extends Controller
 {
     use HttpResponses;
 
-    public function index(){
+    public function index()
+    {
         $airports = Airport::all();
 
         return $this->response('Airport list', $airports);
