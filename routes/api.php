@@ -15,7 +15,7 @@ Route::get('/airports', [ AirportController::class, 'index' ]);
 
 // Rotas para o voo
 Route::get('/flights', [ FlightController::class, 'index' ]);
-Route::get('/buscar-voo', [ FlightController::class, 'show' ]);
+Route::get('/search-flight', [ FlightController::class, 'show' ]);
 Route::post('/flights', [ FlightController::class, 'store' ]);
 Route::put('/flights/{id}', [ FlightController::class, 'update' ]);
 Route::get('/flight/cancel/{id}', [ FlightController::class, 'cancelFlight']);
